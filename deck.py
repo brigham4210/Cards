@@ -1,20 +1,20 @@
 import json
 
+
 # Read the data from the JSON file
-def deck(jsonFile, type, frontColor, backColor, height, width):
+def deck(json_file, t, front_color, back_color, height, width):
+    q = int((8.27 // (height + 0.35)) * (11.69 // (width * 1.05)))
 
-    q = int((8.27//(height+0.35))*(11.69//(width*1.05)))
-
-    with open(jsonFile, 'r') as file:
+    with open(json_file, 'r') as file:
         data = json.load(file)
-        cards = data[type]
+        cards = data[t]
 
-    # HTML structure for the cards of cards (3.5"x2.5") with rounded corners
+    # HTML structures for the cards of cards (3.5"x2.5") with rounded corners
     html_content = f"""
     <!DOCTYPE html>
     <html>
     <head>
-        <title>{type}</title>
+        <title>{t}</title>
         <style>
             body {{
                 display: flex;
@@ -39,7 +39,7 @@ def deck(jsonFile, type, frontColor, backColor, height, width):
                 margin-top: 0.25in;
                 margin-bottom: 0.1in;
                 text-align: left;
-                background-color: {frontColor};
+                background-color: {front_color};
                 border-radius: 20px; /* Rounded corners */
                 font-size: 150%; /* Adjust font size as needed */
                 display: flex;
@@ -58,7 +58,7 @@ def deck(jsonFile, type, frontColor, backColor, height, width):
                 margin-top: 0.25in;
                 margin-bottom: 0.1in;
                 text-align: left;
-                background-color: {backColor};
+                background-color: {back_color};
                 border-radius: 20px; /* Rounded corners */
                 font-size: 150%; /* Adjust font size as needed */
                 display: flex;
@@ -100,14 +100,13 @@ def deck(jsonFile, type, frontColor, backColor, height, width):
             html_content += f"""
         <div class="container-break"></div>
             """
-            for i in range(0,q):
+            for i in range(0, q):
                 html_content += f"""
-        <div class="back""><div class="text">{type}</div></div>
+        <div class="back"><div class="text">{t}</div></div>
                 """
             html_content += f"""
         <div class="container-break"></div>
             """
-
 
     # Closing tags for HTML content
     html_content += """
@@ -117,7 +116,9 @@ def deck(jsonFile, type, frontColor, backColor, height, width):
     """
 
     # Write the generated HTML content to a file
-    with open(f'{type}.html', 'w') as html_file:
+    with open(f'{t}.html', 'w') as html_file:
         html_file.write(html_content)
 
-    print(f"HTML content generated and saved to '{type}.html'")
+    print(f"HTML content generated and saved to '{t}.html'")
+
+    return html_content
