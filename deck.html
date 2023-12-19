@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deck of Cards Generator</title>
+    <style>
+        .deck { display: flex; flex-wrap: wrap; }
+        .card { margin: 5px; padding: 10px; border: 1px solid #000; }
+    </style>
+</head>
+<body>
+    <h1>Deck of Cards Generator</h1>
+    <form action="/generate" method="post">
+        <label for="file">File:</label>
+        <input type="text" id="file" name="file"><br><br>
+        
+        <label for="type">Type:</label>
+        <input type="text" id="type" name="type"><br><br>
+        
+        <label for="front_color">Front Color:</label>
+        <input type="text" id="front_color" name="front_color"><br><br>
+        
+        <label for="back_color">Back Color:</label>
+        <input type="text" id="back_color" name="back_color"><br><br>
+        
+        <label for="height">Height:</label>
+        <input type="text" id="height" name="height"><br><br>
+        
+        <label for="width">Width:</label>
+        <input type="text" id="width" name="width"><br><br>
+        
+        <input type="submit" value="Generate Deck">
+    </form>
+    
+    <div class="deck">
+        <!-- Generated cards will appear here -->
+    </div>
+</body>
+</html>
