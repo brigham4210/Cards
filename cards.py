@@ -17,8 +17,10 @@ def generate_deck():
     back = str(request.form['back_color'])
     height = float(request.form['height'])
     width = float(request.form['width'])
+    paper_height = float(request.form['paper_height'])
+    paper_width = float(request.form['paper_width'])
 
-    return deck(file, t, front, back, height, width)
+    return deck(file, t, front, back, height, width, paper_height, paper_width)
 
 
 if __name__ == '__main__':
