@@ -13,8 +13,8 @@ def index():
 def generate_deck():
     file = request.form['file']
     t = request.form['type']
-    front = request.form['front_color']
-    back = request.form['back_color']
+    front = str(request.form['front_color'])
+    back = str(request.form['back_color'])
     height = float(request.form['height'])
     width = float(request.form['width'])
 

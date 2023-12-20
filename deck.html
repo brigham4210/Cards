@@ -12,16 +12,19 @@
     <h1>Deck of Cards Generator</h1>
     <form action="/generate" method="post">
         <label for="file">File:</label>
-        <input type="text" id="file" name="file"><br><br>
+        <input type="file" id="file" name="file"><br><br>
         
         <label for="type">Type:</label>
         <input type="text" id="type" name="type"><br><br>
         
         <label for="front_color">Front Color:</label>
-        <input type="text" id="front_color" name="front_color"><br><br>
+<!--        <input type="text" id="front_color" name="front_color">-->
+        <input type="color" value="#ffffff" id="front_color" name="front_color"/><br><br>
+
         
         <label for="back_color">Back Color:</label>
-        <input type="text" id="back_color" name="back_color"><br><br>
+<!--        <input type="text" id="back_color" name="back_color">-->
+        <input type="color" value="#ffffff" id="back_color" name="back_color"/><br><br>
         
         <label for="height">Height:</label>
         <input type="text" id="height" name="height"><br><br>
@@ -31,9 +34,5 @@
         
         <input type="submit" value="Generate Deck">
     </form>
-    
-    <div class="deck">
-        <!-- Generated cards will appear here -->
-    </div>
 </body>
 </html>
