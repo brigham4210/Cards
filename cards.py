@@ -18,13 +18,18 @@ def make_cards(key):
     .container {
         display: flex;
         flex-wrap: wrap;
+        margin: 0 auto;
         justify-content: center; /* Center the content horizontally */
-        align-items: center; /* Center the content vertically */
+        width: 11in; /* Optional: Adjust maximum width of the container */
+        height: 8in; /* Optional: Adjust maximum height of the container */
         page-break-after: always; /* Add a page break after each container */
-    }
+        background-color: #FF0FF1;
+}
+
     .card {
         width: 2.5in; /* 4 columns with margin */
         height: 3.5in; /* Height of the card */
+        margin: 0 auto;
         margin-top: 0.25in;
         background-color: #FFFFF1;
         font-size: 20px;
