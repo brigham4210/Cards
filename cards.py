@@ -9,43 +9,6 @@ def read_json(key):
 
 def make_cards(key):
     try:
-        content = """
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Card</title>
-    <style>
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-        margin: auto;
-        font-size: 500px;
-        border-width: 0.6in 0.3in; /* Top/Bottom 0.5in, Left/Right 0.2in */
-        border-style: solid;
-        border-color: #00FF00;        justify-content: center; /* Center the content horizontally */
-        width: 10in; /* Optional: Adjust maximum width of the container */
-        height: 7in; /* Optional: Adjust maximum height of the container */
-        page-break-after: always; /* Add a page break after each container */
-}
-
-    .card {
-        width: 2.5in; /* 4 columns with margin */
-        height: 3.5in; /* Height of the card */
-        margin: auto;
-        background-color: #FFFFFF;
-        font-size: 20px;
-        border: 0.1in solid #000000; /* Border for the card */
-        padding: 0.1in; /* Padding inside the card */
-        box-sizing: border-box; /* Includes padding and border in the total width and height */
-        display: flex;
-        align-items: center;
-    }
-    </style>
-</head>
-<body>
-<div class="container">OFF</div>
-"""
 
         sentences = read_json(key)
         content += '<div class="container">'  # Open the container div
