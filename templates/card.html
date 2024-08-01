@@ -7,6 +7,7 @@
     body, html {
         height: 100%;
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
     }
@@ -28,9 +29,11 @@
 </head>
 <body>
 
-<div class="card">
-    {{sentence}}
-</div>
+{% for text in texts %}
+    <div class="card">
+        {{text}}
+    </div>
+{% endfor %}
 
 </body>
 </html>
